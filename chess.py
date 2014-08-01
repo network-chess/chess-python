@@ -17,7 +17,7 @@ class Player:
 
   def poll(self):
     # Return False if there's no new move, and the move if there is one
-    response = urllib.urlopen(self.game.site+self.game.gid+"/"+self.pid)
+    response = urllib.urlopen(self.game.site+self.game.gid+"/"+self.pid).read()
     if response == "NO NEW MOVE":
       return False
     else:
