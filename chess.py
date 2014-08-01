@@ -24,7 +24,7 @@ class Player:
       return response.split("\n")[1]
 
 class Game:
-  def __init__(self, site="http://localhost:3000/",game_name = ""):
+  def __init__(self, site="http://54.186.49.211:3000/",game_name = ""):
     self.site=site
     if game_name == "":
       response = urllib.urlopen(site+"new").read()
