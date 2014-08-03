@@ -40,6 +40,9 @@ class Player:
 
 class Game:
   def __init__(self, game_id = "", site="http://54.186.49.211:3000/"):
+    if site[-1] != "/":
+      site += "/"
+      print "Added missing /"
     self.site=site
     if game_id == "":
       response = urllib.urlopen(site+"new").read()
