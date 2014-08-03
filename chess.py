@@ -38,10 +38,10 @@ class Player:
       return response.split("\n")[1]
 
 class Game:
-  def __init__(self, site="http://54.186.49.211:3000/",game_name = ""):
+  def __init__(self, game_id = "", site="http://54.186.49.211:3000/"):
     global _chess_do_debug
     self.site=site
-    if game_name == "":
+    if game_id == "":
       response = urllib.urlopen(site+"new").read()
       if _chess_do_debug:
         print response
@@ -50,7 +50,7 @@ class Game:
       else: # Strip off "GOOD"
         self.gid = response.split("\n")[1]
     else:
-      self.gid = game_name
+      self.gid = game_id
 
   def join(self):
     global _chess_do_debug
